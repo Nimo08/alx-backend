@@ -1,0 +1,1 @@
+This repository contains projects done in the ALX Backend Specialization Section.
