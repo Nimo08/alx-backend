@@ -2,7 +2,7 @@
 """Force locale with URL parameter"""
 
 from flask import Flask, request, render_template
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config(object):
@@ -27,7 +27,7 @@ def index() -> str:
 def get_locale() -> str:
     """Determing preferred locale"""
     locale = request.args.get('locale')
-    if locale and locale in app.config['LANGUAGES']:
+    if locale in app.config['LANGUAGES']:
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
