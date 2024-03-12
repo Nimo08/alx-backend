@@ -33,4 +33,4 @@ def index() -> str:
 # Use the above instead of @babel.localeselector to avoid error
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
