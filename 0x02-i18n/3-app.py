@@ -32,5 +32,6 @@ def index() -> str:
 # babel.init_app(app, locale_selector=get_locale)
 # Use the above instead of @babel.localeselector to avoid error
 
+
 if __name__ == "__main__":
     app.run()
