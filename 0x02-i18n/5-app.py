@@ -24,7 +24,7 @@ users = {
 }
 
 
-def get_user():
+def get_user() -> dict:
     """
     Returns a user dictionary or None if the ID cannot be found or
     if login_as was not passed.
@@ -57,8 +57,6 @@ def get_locale() -> str:
 def index() -> str:
     """Return 5-index.html"""
     return render_template("5-index.html")
-
-# babel.init_app(app, locale_selector=get_locale)
 
 
 if __name__ == "__main__":
