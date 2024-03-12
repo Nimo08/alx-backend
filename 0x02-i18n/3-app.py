@@ -18,16 +18,16 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.route("/")
-def index() -> str:
-    """Return 3-index.html"""
-    return render_template("3-index.html")
-
-
 @babel.localeselector
 def get_locale() -> str:
     """Determing preferred locale"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
+@app.route("/")
+def index() -> str:
+    """Return 3-index.html"""
+    return render_template("3-index.html")
 
 
 # babel.init_app(app, locale_selector=get_locale)
