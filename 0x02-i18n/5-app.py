@@ -30,8 +30,8 @@ def get_user() -> dict:
     if login_as was not passed.
     """
     user_id = request.args.get('login_as')
-    if user_id is not None and int(user_id) in users:
-        return users.get((user_id))
+    if user_id is not None and int(user_id) in users.keys():
+        return users.get((int(user_id)))
     return None
 
 
@@ -46,7 +46,7 @@ def before_request():
 
 @babel.localeselector
 def get_locale() -> str:
-    """Determing preferred locale"""
+    """Determine preferred locale"""
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
         return locale
