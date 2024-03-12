@@ -21,6 +21,7 @@ babel.init_app(app)
 
 @app.route("/")
 def index():
+    """Return 2-index.html"""
     return render_template("2-index.html")
 
 
