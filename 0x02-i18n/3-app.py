@@ -4,8 +4,6 @@
 from flask import Flask, request, render_template
 from flask_babel import Babel, _
 
-app = Flask(__name__)
-
 
 class Config:
     "Flask app config"
@@ -14,6 +12,7 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
+app = Flask(__name__)
 app.config.from_object(Config)
 babel = Babel(app)
 
@@ -24,7 +23,7 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route("/")
+@app.route("/", strict_slashes=False)
 def index() -> str:
     """Return 3-index.html"""
     return render_template("3-index.html")
