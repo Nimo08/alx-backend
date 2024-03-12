@@ -29,7 +29,7 @@ def index() -> str:
     return render_template("3-index.html")
 
 
-# babel.init_app(app, locale_selector=get_locale)
+babel.init_app(app, locale_selector=get_locale)
 # Use the above instead of @babel.localeselector to avoid error
 
 
