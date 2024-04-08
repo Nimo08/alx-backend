@@ -1,0 +1,1 @@
+This directory contains scripts for the tasks in 0x03-queuing_system_in_js.
